@@ -29,12 +29,23 @@ def index():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+    if confirmLogin() == True:
+        return redirect(url_for('index'))
     if request.method == 'POST':
         id = request.form['id']
         pw = request.form['pw']
         user = "<User {0}, {1}>".format(id, pw)
         if user in userlist:
+            session["user"] = user
             return redirect(url_for('index'))
         else:
             return render_template("login.html", login=confirmLogin())
     return render_template("login.html", login=confirmLogin())
+
+@app.route("/logout")
+def logout():
+    if confirmLogin() == True:
+        session.pop("user", None)
+        return redirect(url_for('index'))
+    else:
+        return redirect(url_for('index'))

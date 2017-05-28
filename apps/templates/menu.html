@@ -2,7 +2,7 @@
 <style>
 #menu {
 	height:40px;
-	width:1080px;
+	width:100%;
 }
 #menu ul li {
 	display:inline;
@@ -15,7 +15,11 @@
 	list-style:none;
 }
 #menu a {
-	width:150px;
+	{% if login == False %}
+	width:170px;
+	{% else %}
+	width:204px;
+	{% endif %}
 	text-decoration:none;
 	color:white;
 	display:block;
@@ -37,7 +41,7 @@
 <li> | </li>
 <li><a href="/login"> 로그인 </a></li>
 {% else %}
-<li><a href="/trylogoSut"> 로그아웃 </a></li>
+<li><a href="/logout"> 로그아웃 </a></li>
 {% endif %}
 </ul>
 </nav>
