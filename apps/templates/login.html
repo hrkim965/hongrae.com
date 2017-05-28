@@ -1,0 +1,25 @@
+{% extends "menu.html" %}
+<html>
+{% block menu %}
+{{ super() }}
+{% if login == True %}
+<script type=text/javascript>
+location.href = "/"
+</script>
+{% else %}
+<style>
+#form {
+	text-align:center;
+}
+</style>
+<div id="form">
+<h1> 로그인 </h1>
+<form method="post">
+<p><input type=text name=id>
+<p><input type=password name=pw>
+<p><input type=submit value=로그인>
+</form>
+</div>
+{% endif %}
+{% endblock %}
+</html>

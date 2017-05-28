@@ -2,7 +2,7 @@
 <style>
 #menu {
 	height:40px;
-	width:850px;
+	width:1080px;
 }
 #menu ul li {
 	display:inline;
@@ -32,15 +32,13 @@
 <li> | </li>
 <li><a href="/pmeb"> 용돈기입장 </a></li>
 <li> | </li>
-{% if login == True %}
-<li><a href="/join"> 회원가입 </button></li>
+{% if login == False %}
+<li><a href="/join"> 회원가입 </a></li>
 <li> | </li>
-<li><a href="/login"> 로그인 </button></li>
-</ul>
-</nav>
+<li><a href="/login"> 로그인 </a></li>
 {% else %}
-<li><a href="/trylogout"> 로그아웃 </button></li>
+<li><a href="/trylogoSut"> 로그아웃 </a></li>
+{% endif %}
 </ul>
 </nav>
-{% endif %}
 {% endblock %}
