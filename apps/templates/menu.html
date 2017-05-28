@@ -1,32 +1,29 @@
 {% block menu %}
 <style>
 #menu {
-	height:40px;
+	text-align:center;
 	width:100%;
 }
-#menu ul li {
-	display:inline;
-	float:left;
-	background-color:#e53b3b;
-	color:white;
-	vertical-align:middle;
-	line-height:40px;
-	text-align:center;
+#menu ul {
 	list-style:none;
+	background-color:#e53b3b;
+}
+#menu ul li {
+	color:white;
+	line-height:20px;
+	display:inline-block;
+	padding:10px;
+}
+#menu ul li:first-child {
+	border-left:none;
 }
 #menu a {
-	{% if login == False %}
-	width:170px;
-	{% else %}
-	width:204px;
-	{% endif %}
 	text-decoration:none;
 	color:white;
-	display:block;
 	font-size:15px;
 }
 </style>
-<nav id="menu">
+<div id="menu">
 <ul>
 <li><a href="/"> 넓은 산딸기 </a></li>
 <li> | </li>
@@ -44,5 +41,5 @@
 <li><a href="/logout"> 로그아웃 </a></li>
 {% endif %}
 </ul>
-</nav>
+</div>
 {% endblock %}
